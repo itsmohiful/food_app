@@ -5,8 +5,10 @@
         <div class="row pb-2">
             <div class="col-md-6 offset-md-3">
                 <h4 class="pb-2">Confirm To Delete {{ object.name }} </h4>
+                <button type="submit" class="mr-2 btn btn-danger">Confirm</button>
+
                 <a href=" {% url 'food-detail' object.id %} " class="btn btn-primary">Cancel</a>
-                <button class="btn btn-danger" type="submit">Confirm</button>
+                
             </div>
         </div>
     </div>

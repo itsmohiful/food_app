@@ -8,13 +8,11 @@ class FoodItem(models.Model):
     desc = models.CharField(max_length=200)
     price = models.FloatField(default='00')
     image = models.ImageField(default='item_img/default.png',upload_to='item_img')
-    author = models.ForeignKey(User,on_delete=models.CASCADE,
-    blank=True,
-    null=True,default=1)
+    author = models.ForeignKey(User,on_delete=models.CASCADE,default=None)
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("food_detail", kwargs={"pk": self.pk})
+        return reverse("food-detail", kwargs={"pk": self.pk})
     
