@@ -1,0 +1,20 @@
+{% extends 'food/base.html' %}
+
+{% block content %}
+    <div class="container pt-5">
+        <div class="row pb-2">
+            <div class="col-md-5 offset-md-1">
+                <h4 class="pb-2">Food Name : {{ object.name }} </h4>
+                <h4 class="pb-2">Food Description : {{ object.desc }} </h4>
+                <h4 class="pb-2">Food Price : ${{ object.price }} </h4>
+                <h4 class="mb-2">Author : {{ object.author }} </h4>
+                <a href=" {% url 'food-update' object.id %} " class="btn btn-primary">Edit</a>
+                <a href=" {% url 'food-delete' object.id %} " class="btn btn-danger">Delete</a>
+            </div>
+
+            <div class="col-md-5">
+                <img src=" {{ object.image.url }} " alt="food image">
+            </div>
+        </div>
+    </div>
+{% endblock %}
